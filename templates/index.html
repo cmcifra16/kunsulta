@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoKonsulta</title>
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- OWL CAROUSEL -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+    />
+    <!-- BOX ICONS -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main/app.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/shared/nav.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/shared/footer.css') }}"
+    />
+  </head>
+
+  <body>
+    <!--  NAVIGATION -->
+    <header>
+      <!--  NAV CONTACTS -->
+      <div class="nav nav-contacts">
+        <ul class="nav-contacts__list">
+          <li>
+            Email Us : &nbsp
+            <a
+              class="nav-contacts__list-email"
+              href="mailto: dokonsulta@gmail.com"
+              ><i class="fas fa-envelope"></i> dokonsulta@gmail.com</a
+            >
+          </li>
+          <li>
+            <span>
+              Call Us : &nbsp
+              <i class="fas fa-phone"></i>(+63 82) 227-9599 / 227-9508
+            </span>
+          </li>
+        </ul>
+      </div>
+      <!--  NAV MAIN -->
+      <div class="wrapper nav-main">
+        <nav class="nav">
+          <div class="nav_logo-container">
+            <a href="#" class="nav-logo__desktop">
+              <img
+                src="{{ url_for('static', filename='images/p9.png') }} "
+                class="bx-tada main-color"
+              />
+              <span> POLYCLINIC DAVAO INC.</span>
+            </a>
+            <a href="#" class="nav-logo__mobile">
+              <img
+                src="{{ url_for('static', filename='images/p9.png') }} "
+                class="bx-tada main-color"
+              />
+              <span>POLYCLINIC</span>
+            </a>
+            <!-- MOBILE MENU TOGGLE -->
+            <button class="hamburger-menu" id="menu-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="hamburger-menu__icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <ul class="nav-main__list hidden" id="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/rooms-services">rooms/services</a></li>
+            <li><a href="/about">About</a></li>
+            <li>
+              <a class="btn-loginSignup" href="/login"> Login|Signup </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="section-hero">
+      <div class="section-hero__details">
+        <h1>
+          DoKonsulta
+          <br />
+          Online Appointment
+        </h1>
+        <p>Wellness is our success</p>
+        <p>Fully vaccinated personnels</p>
+        <button id="btnsched"><a href="/login">Schedule NOW</a></button>
+      </div>
+      <div class="section-hero__image">
+        <img
+          src="{{ url_for('static', filename='images/hero_doctors.png') }}"
+          alt=""
+        />
+      </div>
+    </section>
+
+    <!-- SECTION POLYCLINIC -->
+    <section class="section-polyclinic">
+      <div class="wrapper">
+        <div class="section-polyclinic__details">
+          <h2>Polyclinic Davao Inc., is fully Vaccinated.</h2>
+          <p>
+            We provide the most full medical services, so every person could
+            have the opportunity to recieve qualitative medical help.
+          </p>
+          <p>
+            Our Clinic has grown to provide a world class facility for the
+            treatment of tooth loss, dental cosmetics and bore advanced
+            restorative dentistry. We are among the most qualified implant
+            providers in the AUS with over 30 years of quality training and
+            experience.
+          </p>
+          <button class="section-polyclinic__details-button">READ MORE</button>
+        </div>
+        <img
+          class="section-polyclinic__image"
+          src="{{ url_for('static', filename='images/covid2.png') }}"
+          alt=""
+        />
+      </div>
+    </section>
+
+    <!-- SECTION SERVICES -->
+    <section class="section-services">
+      <div class="wrapper">
+        <h2>Offered Services</h2>
+        <div class="section-services__offered">
+          <div class="section-services__consultation">
+            <div class="section-services__consultation--bg-transparent"></div>
+            <img
+              src="{{ url_for('static', filename='images/medical_consultation.jpg') }}"
+              alt=""
+            />
+            <div class="section-services__consultation-details">
+              <h3 class="section-services__subtitle">Medical Consultations</h3>
+              <button>
+                <a href="/rooms-services"> View more</a>
+              </button>
+            </div>
+          </div>
+          <div class="section-services__laboratories">
+            <div class="section-services__laboratories--bg-transparent"></div>
+            <img
+              src="{{ url_for('static', filename='images/medical_lab.jpg') }}"
+              alt=""
+            />
+            <div class="section-services__laboratories-details">
+              <h3 class="section-services__subtitle">Laboratories</h3>
+              <button><a href="/rooms-services"> View more</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION DOCTORS -->
+    <section class="section-doctors">
+      <div class="wrapper">
+        <h2>Our Doctors</h2>
+        <div class="movies-slide carousel-nav-center owl-carousel">
+          <!-- DOCTORS CARDS -->
+       
+
+
+          {% for doc in docs %}
+        
+          <a href="#" class="section-doctors__card">
+            <img
+              src="{{ url_for('static', filename='images/doctor-icon-avatar-white_136162-58.webp') }}"
+              alt=""
+            />
+            <div class="section-doctors__card-details">
+              <p class="section-doctors__card-details__title">Dr.</p>
+              <p class="section-doctors__card-details__name">  {{doc.lastName}}, {{doc.firstName}} {{doc.middleName}}</p>
+            </div>
+          </a>
+               
+          {% endfor %}
+
+           
+           
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+      <div class="container">
+        <div class="footer-main">
+          <nav class="footer-main__nav">
+            <p class="footer-main__nav-title">Go to</p>
+            <ul class="footer-main__nav-list">
+              <li><a href="/">Home</a></li>
+              <li><a href="/rooms-services">Rooms/Services</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/login">Login/Signup</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-main__links">
+            <ul class="footer-main__links-socials">
+              <a href="#" class="footer-main__links-socials__item">
+                <i class="bx bxl-facebook"></i>
+              </a>
+              <a href="#" class="footer-main__links-socials__item">
+                <i class="bx bxl-twitter"></i>
+              </a>
+              <a href="#" class="footer-main__links-socials__item">
+                <i class="bx bxl-instagram"></i>
+              </a>
+            </ul>
+            <div class="footer-main__links-appstore">
+              <p class="footer-main__links-appstore__title">Download app</p>
+              <div>
+                <a href="#">
+                  <img
+                    src="{{ url_for('static', filename='images/google-play-badge.svg') }} "
+                    alt=""
+                  />
+                </a>
+                <a href="#">
+                  <img
+                    src="{{ url_for('static', filename='images/app-store-badge.svg') }} "
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>Copyright 2022 <a href="#" target="_blank"> Capstone Project</a></p>
+      </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <!-- JQUERY -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OWL CAROUSEL -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- APP SCRIPT -->
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="{{ url_for('static', filename='shared/nav.js') }}"></script>
+  </body>
+</html>

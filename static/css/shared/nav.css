@@ -1,0 +1,248 @@
+:root {
+  --clr-dark-blue: #004b6d;
+  --main-color: #00bb48ce;
+  --body-bg: #3ad1ab;
+  --box-bg: #929292;
+  --text-color: #ffffff;
+  --text-color2: rgb(0, 0, 0);
+  --nav-height: 60px;
+  --nav-contacts-height: 30px;
+  --space-top: 30px;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+.container {
+  padding: 0 145px;
+  background-color: white;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+}
+
+.nav a {
+  color: var(--main-color);
+}
+.nav_logo-container {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-main__list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-main__list li ~ li {
+  margin-left: 30px;
+}
+
+.nav-main__list a {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nav-main__list a:hover {
+  color: var(--text-color2);
+}
+
+.nav-main__list a.btn:hover,
+a.movie-item:hover {
+  color: unset;
+}
+
+.nav-contacts {
+  display: flex;
+  align-items: center;
+  height: calc(var(--nav-contacts-height) - 30px);
+  border-bottom: 0.5px solid rgba(146, 146, 146, 0.2);
+  padding-block: 30px;
+}
+.nav-contacts__list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-contacts__list li > * {
+  font-size: 14px;
+  font-weight: var(--fw-regular);
+  color: rgba(0, 0, 0);
+}
+
+.nav-contacts__list-email:hover {
+  color: blue !important;
+  text-decoration: underline;
+}
+.nav-main {
+  padding-block: 15px;
+}
+.nav-logo__mobile {
+  display: none;
+}
+
+.nav-logo__desktop {
+  display: flex;
+  align-items: center;
+  font-weight: var(--fw-medium);
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+.nav-logo__desktop img {
+  width: 25px;
+  height: 20px;
+}
+
+.nav-main__list li a {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: var(--fw-regular);
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.nav-main__list li a:hover:not(.btn-loginSignup) {
+  text-decoration: underline;
+}
+.btn-loginSignup {
+  padding: 0.6rem 1rem;
+  background-color: rgb(241, 221, 65);
+  color: rgb(0, 0, 0) !important;
+  font-weight: var(--fw-bold);
+  transition: all 250ms linear;
+}
+.btn-loginSignup:hover {
+  background-color: rgb(146, 141, 101);
+}
+.hamburger-menu {
+  display: none;
+}
+.hidden {
+  display: flex;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 1em 3em;
+  }
+  .nav-logo__desktop {
+    display: none;
+  }
+  .nav-logo__mobile {
+    display: flex;
+    align-items: center;
+    font-weight: var(--fw-medium);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+  .nav-logo__mobile img {
+    width: 25px;
+    height: 20px;
+  }
+}
+@media (max-width: 860px) {
+  .btn-loginSignup {
+    padding: 0.5rem;
+  }
+  .container {
+    padding: 1em 3em;
+  }
+}
+
+/* Mobile menu */
+@media (max-width: 760px) {
+  .nav {
+    flex-direction: column;
+    gap: 2em;
+    height: 100%;
+    padding-block: 1.5em;
+  }
+
+  .container {
+    padding: 0 5em;
+  }
+  .nav_logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-contacts {
+    align-items: flex-start;
+  }
+
+  .nav-contacts__list {
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+  }
+
+  .nav-contacts__list > li > *,
+  .nav-contacts__list > li:first-child {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-logo__desktop {
+    display: flex;
+  }
+  .nav-logo__mobile {
+    display: none;
+  }
+  .nav-main__list {
+    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+  }
+  .nav-main__list li ~ li {
+    margin-left: 0;
+  }
+  .hamburger-menu {
+    display: block;
+    padding: 0 0.5em;
+    background-color: transparent;
+    transition: all 250ms linear;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+  }
+  .hamburger-menu:hover {
+    cursor: pointer;
+    background-color: var(--main-color);
+    padding: 0 1em;
+  }
+  .hamburger-menu__icon {
+    height: 30px;
+    width: 30px;
+  }
+  .hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  header {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+@media (max-width: 570px) {
+  .container {
+    padding: 0 2em;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding: 0 1em;
+  }
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <link rel = "icon" href ={{ url_for('static', filename = 'images/p9.png') }} 
+    type = "image/x-icon"  alt="">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- OWL CAROUSEL -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- BOX ICONS -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main/aboutus.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/shared/nav.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/shared/footer.css') }}"
+    />
+  </head>
+
+  <body>
+    <!--  NAVIGATION -->
+    <header>
+      <!--  NAV CONTACTS -->
+      <div class="nav nav-contacts">
+        <ul class="nav-contacts__list">
+          <li>
+            Email Us : &nbsp
+            <a
+              class="nav-contacts__list-email"
+              href="mailto: dokonsulta@gmail.com"
+              ><i class="fas fa-envelope"></i> dokonsulta@gmail.com</a
+            >
+          </li>
+          <li>
+            <span>
+              Call Us : &nbsp
+              <i class="fas fa-phone"></i>(+63 82) 227-9599 / 227-9508
+            </span>
+          </li>
+        </ul>
+      </div>
+      <!--  NAV MAIN -->
+      <div class="container nav-main">
+        <nav class="nav">
+          <div class="nav_logo-container">
+            <a href="#" class="nav-logo__desktop">
+              <img
+                src="{{ url_for('static', filename='images/p9.png') }} "
+                class="bx-tada main-color"
+              />
+              <span> POLYCLINIC DAVAO INC.</span>
+            </a>
+            <a href="#" class="nav-logo__mobile">
+              <img
+                src="{{ url_for('static', filename='images/p9.png') }} "
+                class="bx-tada main-color"
+              />
+              <span>POLYCLINIC</span>
+            </a>
+            <!-- MOBILE MENU TOGGLE -->
+            <button class="hamburger-menu" id="menu-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="hamburger-menu__icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <ul class="nav-main__list hidden" id="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/rooms-services">rooms/services</a></li>
+            <li><a href="/about">About</a></li>
+            <li>
+              <a class="btn-loginSignup" href="/login"> Login / Signup </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="wrapper-aboutus">
+      <div class="section-about-us">
+        <div class="container">
+          <h2 class="aboutus-title">ABOUT US</h2>
+        </div>
+      </div>
+      <div class="owl-carousel carousel-nav-center" id="hero-carousel">
+        <!-- SLIDE ITEM -->
+        {% for pages in page %}
+        <div class="hero-slide-item">
+          <img class="hero-image" src="{{pages.picture}}" alt="" />
+        </div>
+        {% endfor%}
+      </div>
+      <div class="container mission-vision">
+        <h3 class="mission-vision__title">Mission, Vision</h3>
+        <h4 class="mission-vision__subtitle">Mission</h4>
+        <p class="mission-vision__details">
+          POLYCLINIC DAVAO INC., aims to be a world class multi-specialty and
+          diagnostic center providing out-patient health care services to the
+          people of Mindanao.
+        </p>
+        <h4 class="mission-vision__subtitle">Vision</h4>
+        <p class="mission-vision__details">
+          We will achieve this goal by providing accurate, cost-effective high
+          quality services using state of the art facilities guided by our basic
+          values of unity , integrity, competence and compassion.
+        </p>
+      </div>
+
+      <section class="section-address">
+        <div class="container">
+          <div class="section-address__details">
+            <h5 class="section-address__details-title">Address</h5>
+            <p class="section-address__details-subtitle">
+              Santiago Artiaga Street corner Aurora
+            </p>
+            <p class="section-address__details-subtitle">Quezon Street</p>
+            <p class="section-address__details-subtitle">Davao City 8000</p>
+            <p class="section-address__details-subtitle">Philippines</p>
+            <h5 class="section-address__details-title">Telephone Numbers</h5>
+            <p class="section-address__details-subtitle">
+              (+63 82) 227-9599 / 227-9508
+            </p>
+            <h5 class="section-address__details-title">Fax Number</h5>
+            <p class="section-address__details-subtitle">(+63 82) 222-7622</p>
+          </div>
+          <div class="section-address__map">
+            <div class="gmap_canvas">
+              <iframe
+                src="https://maps.google.com/maps?q=Polyclinic%20Davao,%203J87+4HJ,%20Artiaga%20St,%20Poblacion%20District,%20Davao%20City,%20Davao%20del%20Sur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!--  FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-main">
+          <nav class="footer-main__nav">
+            <p class="footer-main__nav-title">Go to</p>
+            <ul class="footer-main__nav-list">
+              <li><a href="/">Home</a></li>
+              <li><a href="/rooms-services">Rooms/Services</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/login">Login/Signup</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-main__links">
+            <ul class="footer-main__links-socials">
+              <a href="#" class="footer-main__links-socials__item">
+                <i class="bx bxl-facebook"></i>
+              </a>
+              <a href="#" class="footer-main__links-socials__item">
+                <i class="bx bxl-twitter"></i>
+              </a>
+              <a href="#" class="footer-main__links-socials__item">
+                <i class="bx bxl-instagram"></i>
+              </a>
+            </ul>
+            <div class="footer-main__links-appstore">
+              <p class="footer-main__links-appstore__title">Download app</p>
+              <div>
+                <a href="#">
+                  <img
+                    src="{{ url_for('static', filename='images/google-play-badge.svg') }} "
+                    alt=""
+                  />
+                </a>
+                <a href="#">
+                  <img
+                    src="{{ url_for('static', filename='images/app-store-badge.svg') }} "
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>Copyright 2022 <a href="#" target="_blank"> Capstone Project</a></p>
+      </div>
+    </footer>
+    <!-- SCRIPT -->
+    <!-- JQUERY -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OWL CAROUSEL -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- APP SCRIPT -->
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="{{ url_for('static', filename='shared/nav.js') }}"></script>
+  </body>
+</html>

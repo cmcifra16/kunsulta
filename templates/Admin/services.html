@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Services</title>   <link rel = "icon" href ={{ url_for('static', filename = 'images/p9.png') }} 
+            type = "image/x-icon" alt="">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind csss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            fontSize: {
+              h2: "clamp(1rem, 10vw, 2rem)",
+            },
+            fontWeight: {
+              regular: 400,
+              medium: 500,
+              bold: 700,
+            },
+            colors: {
+              blackLight: "rgba(0, 0, 0, 0.5)",
+              green: "#00bb48ce",
+              darkBlue: "#004b6d",
+            },
+            container: {
+              center: true,
+              padding: {
+                sm: "1rem",
+                lg: "2rem",
+                xl: "3rem",
+                "2xl": "4rem",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-poppins">
+    <header>
+      <!-- contacts -->
+      <div class="flex flex-row justify-between items-center md:px-10">
+        <ul
+          class="flex flex-col gap-1 md:gap-10 pt-3 md:flex-row font-regular text-blackLight text-sm"
+        >
+          <li class="flex text-xs">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4"
+            >
+              <path
+                stroke-linecap="round"
+                d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25"
+              />
+            </svg>
+            Email Us:
+            <a class="ml-1" href="mailto: dokonsulta@gmail.com">
+              dokonsulta@gmail.com</a
+            >
+          </li>
+          <li>
+            <span class="flex text-xs">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+                />
+              </svg>
+              Call Us: (+63 82) 227-9599 / 227-9508
+            </span>
+          </li>
+        </ul>
+        <span class="text-xs">Welcome! ADMIN</span>
+      </div>
+
+      <div class="container">
+        <nav
+          class="flex flex-wrap gap-2 items-center justify-between w-full py-4 md:py-0 px-4 md:px-0 text-lg text-gray-700 bg-white"
+        >
+          <!-- logo -->
+          <div>
+            <a href="#" class="flex">
+              <img
+                src="{{ url_for('static', filename='images/p9.png') }} "
+                class="w-5 h-5"
+              />
+              <span class="font-normal text-green"> POLYCLINIC DAVAO INC.</span>
+            </a>
+          </div>
+
+          <!-- Hamburger icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="menu-button"
+            class="h-8 w-8 cursor-pointer md:hidden block"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+
+          <!-- navigation -->
+          <div
+            class="hidden w-full md:flex md:items-center md:w-auto md:flex-1 md:justify-between"
+            id="menu"
+          >
+            <!-- main nav -->
+            <ul
+              class="flex flex-row gap-5 md:gap-0 flex-wrap md:flex-nowrap pt-4 text-base text-blackLight tracking-widest uppercase md:pt-0"
+            >
+              <li>
+                <a
+                  class="md:p-4 py-2 block hover:underline hover:underline-offset-4"
+                  href="/admin_dashboard"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a
+                  class="md:p-4 py-2 block hover:underline hover:underline-offset-4"
+                  href="/admin_add_doctor"
+                  >Doctors</a
+                >
+              </li>
+
+              <li>
+                <a
+                  class="md:p-4 py-2 block hover:underline hover:underline-offset-4"
+                  href="/Admin_appointment"
+                  >Appointments</a
+                >
+              </li>
+              <li>
+                <a
+                  class="md:p-4 py-2 block hover:underline hover:underline-offset-4"
+                  href="/admin_triage"
+                  >Triage</a
+                >
+              </li>
+              <li>
+                <a
+                  class="md:p-4 text-darkBlue font-bold py-2 block underline underline-offset-4"
+                  href="/admin/services"
+                  >Services</a
+                >
+              </li>
+            </ul>
+            <!-- account nav -->
+            <ul
+              class="flex flex-row pt-4 text-base text-blackLight tracking-widest uppercase md:pt-0"
+            >
+              <li>
+                <a
+                  class="md:p-4 md:pr-0 md:flex md:flex-row md:items-center md:gap-1 py-2 block hover:underline hover:underline-offset-4"
+                  href="/logout"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
+                    />
+                  </svg>
+
+                  <span class="text-xs">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="container">
+      <div class="w-full bg-white shadow-lg rounded-sm border border-gray-200">
+        <header
+          class="flex flex-col gap-2 md:gap-0 md:flex-row md:justify-between md:items-center px-5 py-4 border-b border-gray-100"
+        >
+          <div class="flex flex-row items-end gap-5">
+            <h2 class="font-semibold text-gray-800">All Services Offered</h2>
+          </div>
+          <a
+            class="flex gap-1 justify-center p-4 border-none bg-green text-white py-2 transition-all duration-200 ease-in-out hover:bg-darkBlue rounded"
+            href="/admin/services/create"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+
+            Add Service</a
+          >
+        </header>
+
+        <!-- Table -->
+        <div class="p-3">
+          <div class="overflow-x-auto">
+            <table class="table-auto w-full">
+              <thead
+                class="text-xs font-semibold uppercase text-gray-400 bg-gray-50"
+              >
+                <tr>
+                  <th class="p-2 whitespace-nowrap">
+                    <div class="font-semibold text-left">Service</div>
+                  </th>
+                  <th class="p-2 whitespace-nowrap">
+                    <div class="font-semibold text-center">Action</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="text-sm divide-y divide-gray-100">
+                {% for service in services %}
+                <tr>
+                  <td class="p-2 whitespace-nowrap">
+                    <div class="text-left uppercase">
+                      {{service.serviceName}}
+                    </div>
+                  </td>
+
+                  <td class="p-2 whitespace-nowrap">
+                    <div
+                      class="text-center flex flex-row gap-3 items-center justify-center"
+                    >
+                      <!-- Update service action -->
+                      <a
+                        class="text-gray-500 hover:text-gray-900"
+                        href="/admin/services/update?serviceId={{service.documentId}}"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                          />
+                        </svg>
+                      </a>
+                      <!-- Delete service action -->
+                      <a
+                        class="text-gray-500 hover:text-gray-900"
+                        href="/admin_service_delete?serviceId={{service.documentId}}"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='shared/nav.js') }}"></script>
+  </body>
+</html>

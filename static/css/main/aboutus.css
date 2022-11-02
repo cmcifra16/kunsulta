@@ -1,0 +1,129 @@
+:root {
+  --clr-dark-blue: #004b6d;
+  --main-color: #00bb48ce;
+  --body-bg: #3ad1ab;
+  --box-bg: #929292;
+  --text-color: #ffffff;
+  --text-color2: rgb(0, 0, 0);
+  --nav-contacts-height: 30px;
+  --space-top: 30px;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  padding: 0 145px;
+
+  background-color: white;
+}
+
+.wrapper-aboutus {
+  color: var(--clr-dark-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-about-us {
+  color: var(--clr-dark-blue);
+}
+
+.aboutus-title {
+  text-align: center;
+  font-weight: var(--fw-medium);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  text-transform: uppercase;
+}
+.mission-vision {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mission-vision__title {
+  font-weight: var(--fw-medium);
+  font-size: clamp(1.125rem, 3vw, 1.75rem);
+}
+
+.mission-vision__subtitle {
+  font-weight: var(--fw-regular);
+  font-size: 24px;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: rgb(0, 0, 0);
+}
+
+.section-address__details-title {
+  font-weight: var(--fw-regular);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgb(0, 0, 0);
+}
+.section-address__details-title:not(:first-child) {
+  margin-top: 2rem;
+}
+.mission-vision__details,
+.section-address__details-subtitle {
+  font-weight: var(--fw-regular);
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.section-address {
+  border-top: 0.5px solid rgba(146, 146, 146, 0.2);
+  padding-top: 2rem;
+}
+
+.section-address > .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.section-address__details {
+  flex: 1;
+}
+
+.section-address__map {
+  flex: 1;
+}
+.gmap_canvas {
+  height: 100%;
+}
+
+.gmap_canvas iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  height: 550px;
+  object-fit: cover;
+}
+
+@media (max-width: 760px) {
+  .hero-image {
+    height: 300px;
+    object-fit: cover;
+  }
+  .section-address > .container {
+    flex-direction: column;
+    gap: 2em;
+  }
+  .section-address__map {
+    order: -1;
+  }
+  .gmap_canvas iframe {
+    height: 300px;
+  }
+}

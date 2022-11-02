@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rooms and Services</title>
+    <link rel = "icon" href ={{ url_for('static', filename = 'images/p9.png') }} 
+    type = "image/x-icon"  alt="">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/shared/nav.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/shared/footer.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main/rooms_services.css') }}"
+    />
+  </head>
+
+  <body>
+    <!--  NAVIGATION -->
+    <header>
+      <!--  NAV CONTACTS -->
+      <div class="nav nav-contacts">
+        <ul class="nav-contacts__list">
+          <li>
+            Email Us : &nbsp
+            <a
+              class="nav-contacts__list-email"
+              href="mailto: dokonsulta@gmail.com"
+              ><i class="fas fa-envelope"></i> dokonsulta@gmail.com</a
+            >
+          </li>
+          <li>
+            <span>
+              Call Us : &nbsp
+              <i class="fas fa-phone"></i>(+63 82) 227-9599 / 227-9508
+            </span>
+          </li>
+        </ul>
+      </div>
+      <!--  NAV MAIN -->
+      <div class="container nav-main">
+        <nav class="nav">
+          <div class="nav_logo-container">
+            <a href="#" class="nav-logo__desktop">
+              <img
+                src="{{ url_for('static', filename='images/p9.png') }} "
+                class="bx-tada main-color"
+              />
+              <span> POLYCLINIC DAVAO INC.</span>
+            </a>
+            <a href="#" class="nav-logo__mobile">
+              <img
+                src="{{ url_for('static', filename='images/p9.png') }} "
+                class="bx-tada main-color"
+              />
+              <span>POLYCLINIC</span>
+            </a>
+            <!-- MOBILE MENU TOGGLE -->
+            <button class="hamburger-menu" id="menu-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="hamburger-menu__icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <ul class="nav-main__list hidden" id="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/rooms-services">rooms/services</a></li>
+            <li><a href="/about">About</a></li>
+            <li>
+              <a class="btn-loginSignup" href="/login"> Login / Signup </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="wrapper-roomsServices">
+      <div class="container">
+        <h2 class="roomsServices-title">Rooms and Services</h2>
+        <h3 class="roomsServices-subtitle">Laboratories</h3>
+        <div class="directories">
+          <h4 class="directories-title">Offered Services</h4>
+          <div class="directory"></div>
+          {% for service in services %}
+          <div class="directory">
+            <p>{{service.serviceName}}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+        <h3 class="roomsServices-subtitle">Directories</h3>
+        <div class="directories">
+          <!--  Internal Medicine -->
+          <h4 class="directories-title">Internal Medicine</h4>
+          <div class="directory">
+            <p>Room # 101</p>
+            <p>Dr. Mercedes B. Maat</p>
+            <p>Toxilogist</p>
+          </div>
+          <div class="directory">
+            <p>Room # 102</p>
+            <p>Dr. Judit B SANTA CRUZ</p>
+          </div>
+          <div class="directory">
+            <p>Room # 104</p>
+            <p>Dr. Rosalita G. Alejandro</p>
+          </div>
+          <div class="directory">
+            <p>Room # 107</p>
+            <p>Dr. Paulita G. Licayan</p>
+            <p>Adult Cardiologist</p>
+          </div>
+          <div class="directory">
+            <p>Room # 213</p>
+            <p>Dr. Lora Grace Deles</p>
+          </div>
+          <!--  Pediatrics -->
+          <h4 class="directories-title">Pediatrics</h4>
+          <div class="directory">
+            <p>Room # 204</p>
+            <p>Dr. Corazon R Bordios</p>
+          </div>
+          <div class="directory">
+            <p>Room # 204</p>
+            <p>Dr. Jennifer M Banluta</p>
+          </div>
+          <div class="directory">
+            <p>Room # 204</p>
+            <p>Dr. Jusfa D Adao</p>
+          </div>
+          <div class="directory">
+            <p>Room # 205</p>
+            <p>Dr. Marjorie M Magtibay</p>
+          </div>
+          <div class="directory">
+            <p>Room # 214</p>
+            <p>Dr. Noren Paraiso</p>
+          </div>
+          <div class="directory">
+            <p>Room # 210</p>
+            <p>Dr. Rossabe B Cruz - Laurente</p>
+          </div>
+          <!--  Orthopaedic Surgeon -->
+          <h4 class="directories-title">Orthopaedic Surgeon</h4>
+          <div class="directory">
+            <p>Room # 305</p>
+            <p>Dr. Romeo Regner DU, M.D.</p>
+          </div>
+          <!--  Obstetrics / Gyne -->
+          <h4 class="directories-title">Obstetrics / Gyne</h4>
+          <div class="directory">
+            <p>Room # 103</p>
+            <p>Dr. Merideth P. Colina</p>
+          </div>
+          <div class="directory">
+            <p>Room # 206</p>
+            <p>Dr. Victoria R. Dujali</p>
+          </div>
+          <div class="directory">
+            <p>Room # 208</p>
+            <p>Dr. Belinda D. Nadela</p>
+          </div>
+          <div class="directory">
+            <p>Room # 211</p>
+            <p>Dr. Felicidad Slaughter</p>
+          </div>
+          <div class="directory">
+            <p>Room # 214</p>
+            <p>Dr. Gladies D. Rioferio</p>
+          </div>
+          <div class="directory">
+            <p>Room # 103</p>
+            <p>Dr. Conrina Ana P. Molina</p>
+          </div>
+          <!--  General Surgery -->
+          <h4 class="directories-title">General Surgery</h4>
+          <div class="directory">
+            <p>Room # 104</p>
+            <p>Dr. Fernando Q. Alejandro</p>
+          </div>
+          <div class="directory">
+            <p>Room # 305</p>
+            <p>Dr. henrette jdue b palileo</p>
+          </div>
+          <!--  Family Medicine -->
+          <h4 class="directories-title">Family Medicine</h4>
+          <div class="directory">
+            <p>Room # 204</p>
+            <p>Dr. olive j. de castro</p>
+          </div>
+          <div class="directory">
+            <p>Room # 307</p>
+            <p>Dr. ana liza p. lanuza</p>
+          </div>
+          <!--  Dental Services -->
+          <h4 class="directories-title">Dental Services</h4>
+          <div class="directory">
+            <p>Room # 201</p>
+            <p>Dr. cristina e. batiom</p>
+          </div>
+          <div class="directory">
+            <p>Room # 202</p>
+            <p>Dr. dr ruth z. nartatez</p>
+          </div>
+          <div class="directory">
+            <p>Room # 212</p>
+            <p>Dr. noreen n. hernani</p>
+          </div>
+          <div class="directory">
+            <p>Room # 301</p>
+            <p>Dr. jessica g jaen</p>
+          </div>
+          <!--  Dermatologist -->
+          <h4 class="directories-title">Dermatologist</h4>
+          <div class="directory">
+            <p>Room # 101</p>
+            <p>Dr. maricarr pamela m. lacuesta</p>
+          </div>
+          <div class="directory">
+            <p>Room # 307</p>
+            <p>Dr. joanne kate t. milana martinez</p>
+          </div>
+          <div class="directory">
+            <p>Room # 308</p>
+            <p>Dr. francis chris dela cruz</p>
+            <p>animal bite center</p>
+          </div>
+          <!-- Pathology -->
+          <h4 class="directories-title">Pathology</h4>
+          <div class="directory">
+            <p>Room # 108</p>
+            <p>Dr. oscar p. grageda</p>
+          </div>
+          <!-- Ophthalmology -->
+          <h4 class="directories-title">Ophthalmology</h4>
+          <div class="directory">
+            <p>Room # 209</p>
+            <p>Dr. ruth veloso</p>
+          </div>
+          <!-- Radiology and Ultrasound -->
+          <h4 class="directories-title">Radiology and Ultrasound</h4>
+          <div class="directory">
+            <p>Room # 109</p>
+            <p>Dr. susan r. gaspar</p>
+          </div>
+          <div class="directory">
+            <p>Room # 109</p>
+            <p>Dr. emilia l. caballero</p>
+          </div>
+          <div class="directory">
+            <p>Room # 109</p>
+            <p>Dr. ana luisa g. allosa</p>
+          </div>
+          <div class="directory">
+            <p>Room # 109</p>
+            <p>Dr. pia daphne rodriguez</p>
+          </div>
+          <!-- OB-GYNE ULTRASOUND -->
+          <h4 class="directories-title">OB-GYNE ULTRASOUND</h4>
+          <div class="directory">
+            <p>Room # 109</p>
+            <p>Dr. rosario armella m. aquino</p>
+          </div>
+          <div class="directory">
+            <p>Room # 109</p>
+            <p>Dr. margarita isabel amoroso</p>
+          </div>
+          <!-- general surgery -->
+          <h4 class="directories-title">General Surgery</h4>
+          <div class="directory">
+            <p>Room # 207</p>
+            <p>Dr. lucio v. temonio jr.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-main">
+          <nav class="footer-main__nav">
+            <p class="footer-main__nav-title">Go to</p>
+            <ul class="footer-main__nav-list">
+              <li><a href="/">Home</a></li>
+              <li><a href="/rooms-services">Rooms/Services</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/login">Login/Signup</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-main__links">
+            <ul class="footer-main__links-socials">
+              <a href="#" class="footer-main__links-socials__item">
+                <i class="bx bxl-facebook"></i>
+              </a>
+              <a href="#" class="footer-main__links-socials__item">
+                <i class="bx bxl-twitter"></i>
+              </a>
+              <a href="#" class="footer-main__links-socials__item">
+                <i class="bx bxl-instagram"></i>
+              </a>
+            </ul>
+            <div class="footer-main__links-appstore">
+              <p class="footer-main__links-appstore__title">Download app</p>
+              <div>
+                <a href="#">
+                  <img
+                    src="{{ url_for('static', filename='images/google-play-badge.svg') }} "
+                    alt=""
+                  />
+                </a>
+                <a href="#">
+                  <img
+                    src="{{ url_for('static', filename='images/app-store-badge.svg') }} "
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>Copyright 2022 <a href="#" target="_blank"> Capstone Project</a></p>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='shared/nav.js') }}"></script>
+  </body>
+</html>

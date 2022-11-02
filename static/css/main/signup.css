@@ -1,0 +1,135 @@
+:root {
+  --clr-dark-blue: #004b6d;
+  --main-color: #00bb48ce;
+  --body-bg: #3ad1ab;
+  --box-bg: #929292;
+  --text-color: #ffffff;
+  --text-color2: rgb(0, 0, 0);
+  --nav-contacts-height: 30px;
+  --space-top: 30px;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  width: 90%;
+  margin-inline: auto;
+  margin-top: 2em;
+  height: 450px;
+}
+
+.signup-form,
+.signup-img {
+  flex: 1;
+}
+
+.signup-img img {
+  width: 90%;
+  height: 80%;
+}
+
+.signup-form {
+  --gap: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  text-align: center;
+  color: var(--clr-dark-blue);
+}
+.signup-title {
+  font-weight: var(--fw-bold);
+  font-size: 36px;
+}
+
+.signup-form__input {
+  width: 85%;
+  margin-inline: auto;
+  padding: 0.5em 1.5em;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  font-weight: var(--fw-regular);
+  border: 0.5px solid rgba(146, 146, 146, 0.5);
+}
+.signup-form__input::placeholder {
+  color: var(--box-bg);
+}
+.signup-btn {
+  width: 85%;
+  margin-inline: auto;
+  background-color: var(--main-color);
+  font-size: 18px;
+  padding-block: 0.8rem;
+  text-transform: uppercase;
+  color: white;
+  font-weight: var(--fw-bold);
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 10px;
+  transition: all 250ms linear;
+}
+.signup-btn:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 10px 1px var(--main-color);
+}
+.signup-signin {
+  text-align: left;
+  font-size: 18px;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.signup-signin::before {
+  content: "<- ";
+}
+.signup-signin:hover {
+  color: blue;
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 860px) {
+  .wrapper {
+    margin-top: 0;
+  }
+  .signup-img {
+    display: none;
+  }
+  .signup-form {
+    padding-top: 1em;
+    border: 0.5px solid rgba(146, 146, 146, 0.2);
+  }
+}
+
+/* Mobile menu */
+@media (max-width: 760px) {
+  .signup-title {
+    font-size: 28px;
+  }
+  .signup-signin {
+    text-align: left;
+    font-size: 18px;
+    font-weight: var(--fw-semibold);
+  }
+}
+
+@media (max-width: 570px) {
+}
+
+@media (max-width: 420px) {
+}

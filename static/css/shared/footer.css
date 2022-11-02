@@ -1,0 +1,115 @@
+:root {
+  --clr-dark-blue: #004b6d;
+  --main-color: #00bb48ce;
+  --body-bg: #3ad1ab;
+  --box-bg: #929292;
+  --text-color: #ffffff;
+  --text-color2: rgb(0, 0, 0);
+  --nav-height: 60px;
+  --nav-contacts-height: 30px;
+  --space-top: 30px;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
+footer > .container {
+  --margin-top: 5rem;
+  --gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: var(--margin-top);
+  background-color: var(--clr-dark-blue);
+  padding-top: 3rem;
+  color: rgb(255, 255, 255);
+}
+footer > .container > p {
+  font-size: 0.875rem;
+  text-align: center;
+  padding-block: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+footer > .container > p > a {
+  margin-left: 0.5em;
+}
+footer > .container > p > a:hover {
+  color: var(--main-color);
+}
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-main__nav {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) - 1rem);
+}
+.footer-main__nav-title {
+  font-size: 1.3rem;
+  font-weight: var(--fw-medium);
+  opacity: 0.5;
+}
+.footer-main__nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+.footer-main__nav-list li a {
+  font-weight: var(--fw-regular);
+  font-size: clamp(1rem, 1vw, 1.125rem);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.footer-main__nav-list li a:hover {
+  color: var(--main-color);
+  text-decoration: underline;
+}
+.footer-main__links {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) - 1rem);
+}
+.footer-main__links-socials {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+}
+.footer-main__links-socials__item i {
+  font-size: 1.875rem;
+  transition: transform 100ms linear;
+  color: var(--main-color);
+}
+.footer-main__links-socials__item i:hover {
+  transform: scale(1.5);
+}
+.footer-main__links-appstore {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) - 1.5rem);
+}
+.footer-main__links-appstore__title {
+  font-size: 1rem;
+  font-weight: var(--fw-medium);
+}
+
+@media (max-width: 760px) {
+  footer > .container {
+    padding-top: 2rem;
+  }
+  .footer-main {
+    flex-direction: column;
+    gap: 2em;
+    text-align: center;
+  }
+  .footer-main__nav-list {
+    justify-content: center;
+    gap: 0.8em;
+  }
+  .footer-main__links-socials {
+    justify-content: center;
+  }
+}

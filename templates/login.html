@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signin   </title>
+    <link rel = "icon" href ={{ url_for('static', filename = 'images/p9.png') }} 
+            type = "image/x-icon" alt="">
+         
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- BOX ICONS -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/shared/nav.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main/login.css') }}" />
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <header>
+      <!-- NAV CONTACTS -->
+      <div class="nav nav-contacts">
+        <ul class="nav-contacts__list">
+          <li>
+            Email Us : &nbsp
+            <a class="nav-contacts__list-email" href="mailto: dokonsulta@gmail.com"><i class="fas fa-envelope"></i> dokonsulta@gmail.com</a>
+          </li>
+          <li>
+            <span>
+              Call Us : &nbsp
+              <i class="fas fa-phone"></i>(+63 82) 227-9599 / 227-9508
+            </span>
+          </li>
+        </ul>
+      </div>
+      <!-- NAV MAIN -->
+      <div class="container nav-main">
+        <nav class="nav">
+          <div class="nav_logo-container">
+            <a href="#" class="nav-logo__desktop">
+              <img src="{{ url_for('static', filename = 'images/p9.png') }} " class="bx-tada main-color" />
+              <span>POLYCLINIC DAVAO INC.</span>
+            </a>
+            <a href="#" class="nav-logo__mobile">
+              <img src="{{ url_for('static', filename = 'images/p9.png') }} " class="bx-tada main-color" />
+              <span>POLYCLINIC</span>
+            </a>
+            <!-- MOBILE MENU TOGGLE -->
+            <button class="hamburger-menu" id="menu-button">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hamburger-menu__icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+
+          <ul class="nav-main__list hidden" id="menu">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/rooms-services">rooms/services</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a class="btn-loginSignup" href="/patient_signup">Signup</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section>
+      <div class="wrapper">
+        <form class="login-form" action="/login" method="POST">
+          <h2 class="signin-title">Sign In</h2>
+          {% with messages = get_flashed_messages() %}
+            {% if messages: %}
+              {% for message in messages: %}
+                 <p style="color: red;">{{ message }}</p>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          <input class="login-form__input" type="text" name="email" placeholder="Username" required autofocus />
+          <input class="login-form__input" type="password" name="password" placeholder="Password" required />
+          <button class="login-btn" type="submit">Sign in</button>
+          <p>
+            or<br />Login with
+          </p>
+          <div class="login-socials">
+            <a class="login-socials__item" href="/login/google">Google<i class="bx bxl-google-plus-circle"></i></a>
+          </div>
+
+          <p class="signup">
+            Don't have an account ?
+            <a class="login-signup" href="/patient_signup">Sign up</a>
+          </p>
+        </form>
+        <div class="login-img">
+          <img src="{{ url_for('static', filename = 'images/hospital_1.png') }}" />
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      function toggleForm() {
+        var container = document.querySelector('.container')
+        container.classList.toggle('active')
+      }
+    </script>
+    <script src="{{ url_for('static', filename = 'shared/nav.js') }}"></script>
+  </body>
+</html>

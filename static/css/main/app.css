@@ -1,0 +1,377 @@
+:root {
+  --clr-dark-blue: #004b6d;
+  --main-color: #00bb48ce;
+  --body-bg: #3ad1ab;
+  --box-bg: #929292;
+  --text-color: #ffffff;
+  --text-color2: rgb(0, 0, 0);
+  --nav-height: 60px;
+  --nav-contacts-height: 30px;
+  --space-top: 30px;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h2 {
+  color: var(--clr-dark-blue);
+  font-weight: var(--fw-bold);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 1920px;
+  padding: 0 145px;
+  margin: auto;
+  background-color: white;
+}
+
+/* SECTION HERO */
+.section-hero {
+  padding-inline: 45px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.section-hero__details {
+  flex: 1;
+}
+.section-hero__image {
+  flex: 1;
+}
+.section-hero__details > * {
+  color: var(--clr-dark-blue);
+}
+.section-hero__details {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 3.5em 6em;
+}
+.section-hero__details h1 {
+  font-weight: var(--fw-bold);
+  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: 5px;
+}
+.section-hero__details p {
+  font-weight: var(--fw-regular);
+  font-size: 1rem;
+  line-height: 1.1;
+  letter-spacing: 2px;
+}
+.section-hero__details button {
+  width: 60%;
+  font-size: 16px;
+  padding-block: 1rem;
+  text-transform: uppercase;
+  color: white;
+  font-weight: var(--fw-bold);
+  letter-spacing: 2px;
+  transition: all 250ms linear;
+}
+.section-hero__details button:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 10px 1px var(--main-color);
+}
+.section-hero__image img {
+  height: 500px;
+  object-fit: cover;
+}
+
+/* SECTOIN POLYCLINIC */
+.section-polyclinic > .wrapper {
+  --margin-block: 5rem;
+  --gap: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+  margin-block: var(--margin-block);
+  color: var(--clr-dark-blue);
+}
+.section-polyclinic h2 {
+  text-align: left;
+}
+.section-polyclinic__details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap);
+}
+.section-polyclinic__details p {
+  font-weight: var(--fw-regular);
+  font-size: 20px;
+  font-size: clamp(1rem, 3vw, 1.25em);
+  line-height: 1.6;
+  color: rgba(0, 0, 0);
+}
+.section-polyclinic__details-button {
+  width: 50%;
+  font-size: 1rem;
+  padding-block: 1rem;
+  text-transform: uppercase;
+  color: white;
+  font-weight: var(--fw-bold);
+  letter-spacing: 2px;
+  transition: all 250ms linear;
+}
+.section-polyclinic__details button:hover {
+  cursor: pointer;
+  background-color: #004b6d;
+}
+.section-polyclinic__image {
+  flex: 0.8;
+  width: 300px;
+}
+/* SECTION SERVICES */
+.section-services > .wrapper {
+  --gap: 1.5rem;
+  --bg-transparent-zIndex: 2;
+  --margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin-bottom: var(--margin-bottom);
+}
+.section-services__offered {
+  display: flex;
+  flex-direction: row;
+  gap: calc(var(--gap) - 0.5rem);
+  color: white;
+}
+
+.section-services__subtitle {
+  font-weight: var(--fw-medium);
+  font-size: 28px;
+}
+.section-services__consultation,
+.section-services__laboratories {
+  height: 450px;
+  flex: 1;
+  position: relative;
+}
+.section-services__consultation,
+.section-services__laboratories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-services__consultation > img,
+.section-services__laboratories > img {
+  position: absolute;
+  inset: 0;
+}
+.section-services__consultation-details,
+.section-services__laboratories-details {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.section-services__consultation-details button,
+.section-services__laboratories-details button {
+  width: 200px;
+  margin-inline: auto;
+  padding: 0.8em 1.5em;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  transition: all 250ms linear;
+}
+.section-services__consultation-details button:hover,
+.section-services__laboratories-details button:hover {
+  cursor: pointer;
+  background-color: #004b6d;
+}
+
+.section-services__consultation--bg-transparent,
+.section-services__laboratories--bg-transparent {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: var(--bg-transparent-zIndex);
+}
+
+.section-services__consultation > img,
+.section-services__laboratories > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* SECTION DOCTORS */
+.section-doctors > .wrapper {
+  --gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.section-doctors__card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  padding-top: 140%;
+  cursor: pointer;
+  color: white;
+}
+.section-doctors__card img:hover {
+  transform: scale(1.2);
+}
+.section-doctors__card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s linear;
+}
+.section-doctors__card-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--box-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+}
+.section-doctors__card-details__title {
+  font-size: 1.5rem;
+  font-weight: var(--fw-medium);
+}
+.section-doctors__card-details__name {
+  font-size: 1rem;
+  font-weight: var(--fw-regular);
+  letter-spacing: 2px;
+}
+
+.carousel-nav-center {
+  position: relative;
+}
+
+.carousel-nav-center .owl-nav button i {
+  font-size: 3rem;
+}
+
+.carousel-nav-center .owl-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-nav-center .owl-nav .owl-prev {
+  position: absolute;
+  left: 5px;
+}
+
+.carousel-nav-center .owl-nav .owl-next {
+  position: absolute;
+  right: 5px;
+}
+button {
+  border-radius: 10px;
+  background-color: var(--main-color);
+  border: none;
+}
+@media (max-width: 1200px) {
+  .wrapper {
+    padding: 0 2em;
+  }
+  .section-hero__details {
+    padding: 3.5em 1em;
+  }
+  .section-hero__image img {
+    height: 400px;
+  }
+  .section-polyclinic__details {
+    flex: 1;
+  }
+  .section-polyclinic__image {
+    width: 500px;
+    flex: 0.3;
+  }
+}
+@media (max-width: 1120px) {
+  .section-polyclinic__image {
+    width: 400px;
+  }
+}
+@media (max-width: 1000px) {
+  .section-polyclinic__image {
+    width: 300px;
+  }
+}
+@media (max-width: 860px) {
+  .section-polyclinic > .wrapper {
+    flex-direction: column;
+  }
+  .section-polyclinic__image {
+    display: none;
+  }
+  /* hero section */
+  .section-hero__details {
+    flex: 1;
+  }
+  .section-hero__image {
+    flex: 0.7;
+  }
+}
+
+/* Mobile menu */
+@media (max-width: 760px) {
+  .section-hero__image {
+    margin-top: 0.8em;
+  }
+  .section-services__offered {
+    flex-direction: column;
+  }
+  .section-services__consultation,
+  .section-services__laboratories {
+    flex: none;
+    height: 300px;
+  }
+}
+
+@media (max-width: 570px) {
+  .section-hero__details {
+    align-items: center;
+  }
+  .section-hero__details > h1 {
+    text-align: center;
+  }
+
+  .section-hero__image {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+}
